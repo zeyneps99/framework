@@ -8,7 +8,8 @@ public static partial class Events {
     public static class Core 
     {
         //list core game events here
-        public static Action StartGame;
+        public static Action GameStarted;
+        public static Action ShowMenu;
         public static Action<bool> EndLevel;
         public static Action StartLevel;
         public static Action RestartLevel;
