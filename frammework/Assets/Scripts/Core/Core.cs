@@ -17,8 +17,6 @@ public class Core : StaticObjectBase<Core>
    private void Awake() {
     DontDestroyOnLoad(gameObject);
     StartGame();
-        Debug.Log("here");
-
    }
    private void OnEnable() {
     
@@ -31,6 +29,7 @@ public class Core : StaticObjectBase<Core>
    private void StartGame() {
     currentLevel = 0;
     //SceneManager.LoadSceneAsync("Main");
+    Events.Events.Core.Test?.Invoke(false);
     Events.Events.Core.GameStarted?.Invoke();
    }
 
