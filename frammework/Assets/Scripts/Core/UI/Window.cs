@@ -10,6 +10,7 @@ public static CanvasGroup canvasGroup;
 public bool isVisible;
 
     private void Awake() {
+        isVisible = false;
         if (!TryGetComponent(out canvasGroup)) {
             Debug.Log("Canvas group of the given window cannot be found.");
             }
