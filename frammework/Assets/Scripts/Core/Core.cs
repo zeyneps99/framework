@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.BaseClasses;
-using Core.Events;
 using UnityEngine.SceneManagement;
+using Core.Events;
 using Core.Scriptables.Level;
 namespace Core {
 public class Core : StaticObjectBase<Core>
@@ -15,23 +15,31 @@ public class Core : StaticObjectBase<Core>
    public LevelGroupSO levelGroup;
 
    private void Awake() {
-    DontDestroyOnLoad(gameObject);
-    StartGame();
+      DontDestroyOnLoad(gameObject);
+   }
+
+   private void Start() {
+          StartGame();
    }
    private void OnEnable() {
-    
    }
 
    private void OnDisable() {
-    
    }
 
-   private void StartGame() {
-    currentLevel = 0;
-    //SceneManager.LoadSceneAsync("Main");
-    Events.Events.Core.Test?.Invoke(false);
-    Events.Events.Core.GameStarted?.Invoke();
+   private void Hello(){
+      Debug.Log("hello");
    }
+   private void StartGame() {
+      Debug.Log("startgame");
+    currentLevel = 0;
+   Events.Events.Core.GameStarted?.Invoke();
+
+    //SceneManager.LoadSceneAsync("Main");
+    // Events.Events.Core.Test?.Invoke(false);
+    // Events.Events.Core.GameStarted?.Invoke();
+    
+    }
 
    public void StartLevel() {
     PlayerPrefs.SetInt("level", currentLevel);
