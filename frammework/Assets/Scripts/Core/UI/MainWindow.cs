@@ -10,8 +10,7 @@ namespace Core.UI {
 public class MainWindow : Window {
 
     public void OnButtonPressed() {
-        Debug.Log("yo");
-        Events.Events.Core.MenuButtonPressed?.Invoke();
+        Events.Events.Core.ShowMenu?.Invoke();
         SceneManager.LoadSceneAsync("Menu");
         }
     }
