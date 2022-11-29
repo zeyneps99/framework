@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 namespace Core.UI {
 public class MenuWindow : Window {
     
-    
-
-
-}
+    public void OnButtonPressed() {
+        Events.Events.Core.LevelSelected?.Invoke();
+        SceneManager.LoadSceneAsync("Game");
+        }
+    }
 }
 
